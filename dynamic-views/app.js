@@ -1,7 +1,9 @@
 const express = require('express');
 const app = express();
 
+// imports the movies
 const movies = require('./movies.json');
+
 console.log(movies);
 // $ npm install hbs
 // this line allows us to use handlebars as the templating engine
@@ -15,6 +17,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/movies', (req, res) => {
+    // this renders the movies views with the movies from the json file
     res.render('movies', { moviesList: movies });
 })
 
